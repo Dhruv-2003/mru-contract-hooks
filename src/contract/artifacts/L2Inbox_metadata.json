@@ -1,0 +1,104 @@
+{
+	"compiler": {
+		"version": "0.8.23+commit.f704f362"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "currentStateRoot",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCurrentStateRootHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_newStateRoot",
+						"type": "bytes32"
+					}
+				],
+				"name": "setStateRootHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "stateRoot",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"setStateRootHash(bytes32)": {
+					"details": "called by the L1-L2 messenger",
+					"params": {
+						"_newStateRoot": "current state root for the keystore"
+					}
+				}
+			},
+			"title": "L2Inbox This contract is a L2 inbox that stores the currentStateRootHash & is updated via the Hook through native Bridges",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"setStateRootHash(bytes32)": {
+					"notice": "Set State Root hashonly Owner/Operator are authorised"
+				}
+			},
+			"notice": "The setStateRootHash function is not restricted currently to any specific sender , but ideally should be the L1-L2 messenger",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"L2Inbox.sol": "L2Inbox"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"L2Inbox.sol": {
+			"keccak256": "0x4e11c0fbb3e043418867a1b8958bb9cdbac8f123b695b52bf163977e020c210b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a2cf02e1c6b240435917998231a5ab46bb13ebf505155068b34f72612927be9f",
+				"dweb:/ipfs/Qmd9g54z6LpmrLY4aAFtDp56uzkKZz2Qg43pGZVguGqMmF"
+			]
+		}
+	},
+	"version": 1
+}
