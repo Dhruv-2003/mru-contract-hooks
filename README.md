@@ -1,6 +1,4 @@
-# rollup
-
-Project initialized using [@stackr/sdk](https://www.stackrlabs.xyz/)
+# Using contract hooks for a Stackr Micro Rollup
 
 ## Project structure
 
@@ -16,8 +14,9 @@ Project initialized using [@stackr/sdk](https://www.stackrlabs.xyz/)
 │   ├── index.ts ## -> starting point, everything gets imported here.
 │   ├── server.ts ## -> server setup if any in the example.
 │   ├── cli.ts ## -> CLI interaction setup if any in the example.
-│   ├── contract ## -> place to keep your utility Contracts like Hook and Bridge
-│   │   └──Contract.sol
+│   ├── contract ## -> hook contracts
+│   │   ├── Hook.sol ## -> Hook contract to send the stateRoot of the latest block to L2Inbox via GMP
+│   │   └── L2Inbox.sol ## -> Inbox on L2 to keep record of the latest state Root of the MRU
 │   ├── stackr
 │       ├── machine.ts ## -> preferred place to keep your State Machine(s) and export from
 │       ├── mru.ts ## -> place to initialize your MicroRollup
@@ -83,8 +82,3 @@ Full instructions can be found at [here](https://docs.stf.xyz/build/plugins/play
 ## Vulcan Explorer
 
 To explore your submitted blocks and batches, you can use the Vulcan Explorer hosted at: [https://explorer.vulcan.stf.xyz/](https://explorer.vulcan.stf.xyz/).
-
-## Conrtract deployements
-
-Optimism Sepolia L2 Inbox : 0xC37175181265D75ed04f28f3c027cC5fAceF5dAd
-Hook L1 Sepolia : 0xC41Cae7676d343e21001f30ED38d708f40079B59

@@ -18,10 +18,49 @@
 			},
 			{
 				"inputs": [],
+				"name": "BRIDGE_DOMAIN",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "L2InboxAddress",
 				"outputs": [
 					{
 						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "MRU_DOMAIN",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mailbox",
+				"outputs": [
+					{
+						"internalType": "contract IMailbox",
 						"name": "",
 						"type": "address"
 					}
@@ -251,10 +290,46 @@
 						"type": "bytes32"
 					}
 				],
+				"name": "quoteSendRoot",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_rootHash",
+						"type": "bytes32"
+					}
+				],
 				"name": "sendRootToOptimism",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_rootHash",
+						"type": "bytes32"
+					}
+				],
+				"name": "sendRootToOptimismViaHyperlane",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -285,19 +360,19 @@
 	},
 	"sources": {
 		"Hook.sol": {
-			"keccak256": "0xf6d068be2a5c32dad70c609cf5d2f8e49b80e7b8389659ff85047b11b2c498b6",
+			"keccak256": "0x2e4100364aa579ffdc3921c2b1048903c68144cb01cf749a7f6d096afd55547a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://47d85a740b8430e28526e18255397a28d71abf8357aeb2d65e9249bf4dab78e0",
-				"dweb:/ipfs/QmXaRd9daN9z8gMrsUYQWKj8ekm89D84Sh7EregZRKnJVk"
+				"bzz-raw://19aacfc48ecd1ce5ab689fb634015f3f0514a5147557c3b3f790547c6bc47145",
+				"dweb:/ipfs/QmeTSfn3PjF8e91q88Rm9V8QwheibZG4ZWqpxqeKU8Jwa2"
 			]
 		},
 		"L2Inbox.sol": {
-			"keccak256": "0x4e11c0fbb3e043418867a1b8958bb9cdbac8f123b695b52bf163977e020c210b",
+			"keccak256": "0xe8bf249b6e8f194d92a74a2e6e11acfa0551439371ee366d7ecdbf1b724c29d9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a2cf02e1c6b240435917998231a5ab46bb13ebf505155068b34f72612927be9f",
-				"dweb:/ipfs/Qmd9g54z6LpmrLY4aAFtDp56uzkKZz2Qg43pGZVguGqMmF"
+				"bzz-raw://42bb6a0cb2fb26da74eebce18cf6ccfbdcc5126d085fc37ce86f7f00e94cd12c",
+				"dweb:/ipfs/QmYDQrAnom2QV6h8g6tt3kNfZ1jU2Kt9UkNHnDTJi8mLnk"
 			]
 		},
 		"interfaces/IAppInbox.sol": {
@@ -322,6 +397,30 @@
 			"urls": [
 				"bzz-raw://0bb42d8040122360f6e42705f0f356c0c86d92ce813e51344333740ca8e139ec",
 				"dweb:/ipfs/QmNyvvUpxLrXMv84dnKpChdS9ScmUu9ftLJvWviYdAJJtu"
+			]
+		},
+		"interfaces/IMailbox.sol": {
+			"keccak256": "0xd793ee07143447ceed4c39eaebc62354e8f2841869c4efcb807ea3df551c3034",
+			"license": "MIT OR Apache-2.0",
+			"urls": [
+				"bzz-raw://f6f36e36f42b1a47499aa688f714f74133cf3d584d61a9479c10bac80ca271a1",
+				"dweb:/ipfs/Qmf3JoQGGvLfzqE3Z3sUN9xh7WkWCCEG9nf26WSoZPj9C2"
+			]
+		},
+		"interfaces/IMessageRecipient.sol": {
+			"keccak256": "0x981db957d11306cafe02a84ed9c6b06ab2a556535ec9923b9342034cfdda646c",
+			"license": "MIT OR Apache-2.0",
+			"urls": [
+				"bzz-raw://24bf9608a1ee24174663282622125786a2b7f6983c27e695d17be3a8b41a5ce1",
+				"dweb:/ipfs/QmV7VgXSEs8Um6aF13Bx1SMPyRnG2mTFzbiXrWqUgPtBba"
+			]
+		},
+		"lib/TypeCasts.sol": {
+			"keccak256": "0x55ed7801d8392a5cdc58814d797ca6a107ac631bb2a20f4e0ea7ff8f1c84d347",
+			"license": "MIT OR Apache-2.0",
+			"urls": [
+				"bzz-raw://eedce2d579012f5a045259820ca6178ada9aae38d6dcc497f203b323713e8038",
+				"dweb:/ipfs/QmXzUWzCzFMraByt2tYCPyCEgHEMhRqCT7GVwTaAHWyDnW"
 			]
 		}
 	},

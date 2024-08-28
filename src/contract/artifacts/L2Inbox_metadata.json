@@ -7,6 +7,11 @@
 		"abi": [
 			{
 				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
 				"name": "currentStateRoot",
 				"outputs": [
 					{
@@ -26,6 +31,42 @@
 						"internalType": "bytes32",
 						"name": "",
 						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_message",
+						"type": "bytes"
+					}
+				],
+				"name": "handle",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "mailbox",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -92,11 +133,19 @@
 	},
 	"sources": {
 		"L2Inbox.sol": {
-			"keccak256": "0x4e11c0fbb3e043418867a1b8958bb9cdbac8f123b695b52bf163977e020c210b",
+			"keccak256": "0xe8bf249b6e8f194d92a74a2e6e11acfa0551439371ee366d7ecdbf1b724c29d9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a2cf02e1c6b240435917998231a5ab46bb13ebf505155068b34f72612927be9f",
-				"dweb:/ipfs/Qmd9g54z6LpmrLY4aAFtDp56uzkKZz2Qg43pGZVguGqMmF"
+				"bzz-raw://42bb6a0cb2fb26da74eebce18cf6ccfbdcc5126d085fc37ce86f7f00e94cd12c",
+				"dweb:/ipfs/QmYDQrAnom2QV6h8g6tt3kNfZ1jU2Kt9UkNHnDTJi8mLnk"
+			]
+		},
+		"interfaces/IMessageRecipient.sol": {
+			"keccak256": "0x981db957d11306cafe02a84ed9c6b06ab2a556535ec9923b9342034cfdda646c",
+			"license": "MIT OR Apache-2.0",
+			"urls": [
+				"bzz-raw://24bf9608a1ee24174663282622125786a2b7f6983c27e695d17be3a8b41a5ce1",
+				"dweb:/ipfs/QmV7VgXSEs8Um6aF13Bx1SMPyRnG2mTFzbiXrWqUgPtBba"
 			]
 		}
 	},
